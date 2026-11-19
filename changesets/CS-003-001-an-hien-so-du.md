@@ -1,6 +1,6 @@
 ---
 id: WO-2026-003/changeset-001
-version: 2
+version: 3
 status: awaiting_review
 produced_by: xora-dev
 inputs:
@@ -23,12 +23,12 @@ Nhánh: `admin/WO-2026-003` (đã map WO bằng `xdlc link`). PR: chưa tạo.
 
 | REQ (BRD v2.0) | Nội dung | Trạng thái trong changeset | Code | Test |
 |---|---|---|---|---|
-| REQ-001 | Mặc định ẩn | Làm `[GIẢ ĐỊNH]` theo BRD v2.0 | `home_balances(hidden=True)` | `test_default_is_hidden` |
+| REQ-001 | Mặc định ẩn | Làm theo BRD v2.0. Developer cho biết BA xác nhận mặc định Ẩn (lời Developer kể lại, chưa có trong tài liệu) | `home_balances(hidden=True)` | `test_default_is_hidden` |
 | REQ-002 | Hiện số dư bằng một thao tác | Phần backend: `hidden=False` trả số dư thật | `home_balances` | `test_shown_returns_real_balances` |
 | REQ-003 | Ẩn lại bằng một thao tác | Phần backend: `hidden=True` | `home_balances` | `test_one_switch_masks_all_balances` |
 | REQ-004 | Thay số dư bằng `******` khi ẩn | Làm | `BALANCE_MASK` | `test_hidden_state_never_exposes_balance_value` |
 | REQ-005 | Một công tắc chung | Làm: một tham số `hidden` cho mọi số dư | `home_balances` | `test_one_switch_masks_all_balances` |
-| REQ-006 | Ghi nhớ lựa chọn | **Không làm.** Cờ lưu cục bộ trên thiết bị (WO-MB-001 mục 5), không có API mới | - | - |
+| REQ-006 | Ghi nhớ lựa chọn | **Không làm.** Cờ lưu cục bộ trên thiết bị (WO-MB-001 mục 5), không có API mới. Developer cho biết BA muốn "ghi nhớ 5 phút"; chưa rõ nghĩa (hết hạn sau 5 phút, hay chỉ nhớ nếu mở lại trong 5 phút) và chưa rõ nơi xử lý (client hay backend), nên chưa code | - | - |
 | REQ-007 | Báo lỗi khi không tải được số dư | Làm: ném `ACCOUNT_BALANCE_LOAD_FAILED` | `home_balances` | `test_load_failure_when_shown_*` |
 | NFR-001 | Không lộ số dư khi ẩn | Làm | `home_balances` | `test_hidden_state_never_exposes_balance_value` |
 
@@ -103,6 +103,7 @@ Chạy `python3 -m unittest discover -s tests -t . -v` và xem 7 test trong `tes
 
 ## 13. Giới hạn đã biết
 
+- Developer cho biết BA xác nhận REQ-001 mặc định Ẩn và REQ-006 ghi nhớ 5 phút. Developer quyết định không cập nhật BRD và thiết kế. Hai điều này chỉ có trong lời Developer kể lại, không có trong tài liệu nào; reviewer không thể đối chiếu. REQ-006 "5 phút" khác BRD v2.0 (ghi nhớ cho các lần mở app sau) và chưa làm.
 - BRD v2.0 là draft, chưa duyệt. Nó mâu thuẫn với `WO-MB-001` ở mặc định (Ẩn so với Hiện), phạm vi ghi nhớ (thiết bị so với người dùng + thiết bị), yêu cầu ẩn khi app chuyển nền và NFR (<100ms, screen reader). Nếu BRD đổi theo tệp gốc, REQ-001, REQ-006, ADR-01 (DEC-002), ADR-05 (DEC-003) và thiết kế liên quan phải làm lại. Với code này, đổi mặc định là đổi `hidden=True` thành `False` và sửa test.
 - Chưa đọc được thiết kế OUT-003-02. Toàn bộ code dựa trên BRD v2.0 và `WO-MB-001`.
 - Q-01 (có cần sinh trắc học khi chuyển từ ẩn sang hiện) chưa có đáp án, chưa làm.
@@ -124,3 +125,4 @@ Chạy `python3 -m unittest discover -s tests -t . -v` và xem 7 test trong `tes
 
 - v1: bản đầu, `status: draft`.
 - v2: Developer chọn `phát hành` sau khối cảnh báo lệch chuẩn. Nộp nguyên trạng, `status: awaiting_review`. Năm điểm lệch giữ trong mục *Sai khác so với chuẩn*, tình trạng `Phát hành nguyên trạng`; cột *Người chấp nhận* và *Thời điểm* để trống vì Developer chưa cho tên và ngày.
+- v3: Developer báo BA xác nhận REQ-001 Ẩn và REQ-006 ghi nhớ 5 phút, không cập nhật tài liệu. Ghi vào mục 1 và 13. REQ-006 chưa code vì chưa rõ nghĩa.
