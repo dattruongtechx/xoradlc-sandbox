@@ -1,7 +1,7 @@
 ---
 id: WO-2026-003/changeset-001
-version: 1
-status: draft
+version: 2
+status: awaiting_review
 produced_by: xora-dev
 inputs:
   - path: BRD-An-hien-so-du-WO-2026-003
@@ -114,12 +114,13 @@ Chạy `python3 -m unittest discover -s tests -t . -v` và xem 7 test trong `tes
 
 | Mục chuẩn | Mức | Tình trạng | Người chấp nhận | Thời điểm | Lý do |
 |---|---|---|---|---|---|
-| 3. Phần do AI sinh (cột đã đọc kỹ) | 🔴 | chưa phản hồi | | | Developer chưa xác nhận đã đọc |
-| 6. Kết quả kiểm tại chỗ (build, lint, độ phủ) | 🔴 | chưa phản hồi | | | Repo không có công cụ tương ứng; sensor chưa có kết quả chấm tự động |
-| 7. Quét bảo mật | 🔴 | chưa phản hồi | | | Chưa chạy SAST, quét phụ thuộc, quét secret |
-| 8. Tương thích ngược | 🔴 | chưa phản hồi | | | Chưa kiểm được nơi gọi ngoài repo |
-| 11. Hướng dẫn kiểm thử thủ công | 🟡 | chưa phản hồi | | | Không có client để kiểm trên màn hình |
+| 3. Phần do AI sinh (cột đã đọc kỹ) | 🔴 | Phát hành nguyên trạng | (chưa ghi tên) | | Developer chưa xác nhận đã đọc |
+| 6. Kết quả kiểm tại chỗ (build, lint, độ phủ) | 🔴 | Phát hành nguyên trạng | (chưa ghi tên) | | Repo không có công cụ tương ứng; sensor chưa có kết quả chấm tự động |
+| 7. Quét bảo mật | 🔴 | Phát hành nguyên trạng | (chưa ghi tên) | | Chưa chạy SAST, quét phụ thuộc, quét secret |
+| 8. Tương thích ngược | 🔴 | Phát hành nguyên trạng | (chưa ghi tên) | | Chưa kiểm được nơi gọi ngoài repo |
+| 11. Hướng dẫn kiểm thử thủ công | 🟡 | Phát hành nguyên trạng | (chưa ghi tên) | | Không có client để kiểm trên màn hình |
 
 ## Nhật ký thay đổi
 
 - v1: bản đầu, `status: draft`.
+- v2: Developer chọn `phát hành` sau khối cảnh báo lệch chuẩn. Nộp nguyên trạng, `status: awaiting_review`. Năm điểm lệch giữ trong mục *Sai khác so với chuẩn*, tình trạng `Phát hành nguyên trạng`; cột *Người chấp nhận* và *Thời điểm* để trống vì Developer chưa cho tên và ngày.
