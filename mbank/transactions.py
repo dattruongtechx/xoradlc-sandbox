@@ -1,4 +1,6 @@
 """Lịch sử giao dịch."""
+from __future__ import annotations
+
 from dataclasses import dataclass, field
 from datetime import datetime
 
@@ -10,6 +12,9 @@ class Transaction:
     amount: int  # âm = tiền ra
     description: str
     at: datetime = field(default_factory=datetime.now)
+    # WO-2026-017 BR-03: loại giao dịch để xét tra soát. None = dữ liệu cũ chưa phân loại.
+    # Giá trị: "transfer_out" | "transfer_in" | "card" | "bill_payment"
+    kind: str | None = None
 
 
 class TransactionLog:
