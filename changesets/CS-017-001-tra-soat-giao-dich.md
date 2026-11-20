@@ -1,6 +1,6 @@
 ---
 id: WO-2026-017/changeset-001
-version: 2
+version: 3
 status: draft
 produced_by: xora-dev
 inputs:
@@ -16,7 +16,7 @@ approved_at: null
 
 # Changeset: Gửi yêu cầu tra soát giao dịch (WO-2026-017)
 
-Nhánh: `feature/WO-2026-017-tra-soat-giao-dich`, tạo từ `main` tại `43d0feb` và đã map WO bằng `xdlc link`. PR: chưa tạo. Nhánh chưa push.
+Nhánh: `feature/WO-2026-017-tra-soat-giao-dich`, tạo từ `main` tại `43d0feb` và đã map WO bằng `xdlc link`. PR: [#2](https://github.com/dattruongtechx/xoradlc-sandbox/pull/2) vào `main`, chưa merge.
 
 BRD và thiết kế đều là bản nháp, nên changeset này có thể phải làm lại khi hai tài liệu được duyệt.
 
@@ -187,3 +187,4 @@ Chưa có client hay API, nên chỉ kiểm được ở mức hàm:
 
 - v1: bản đầu, `status: draft`.
 - v2: Developer yêu cầu commit mà chưa trả lời khối cảnh báo lệch chuẩn. Giữ nguyên nội dung, thêm mục *Sai khác so với chuẩn* với 5 điểm, tình trạng `chưa phản hồi`; cột *Người chấp nhận* và *Thời điểm* để trống.
+- v3: Developer yêu cầu cập nhật link PR. Đã push nhánh và tạo PR #2 vào `main`; sửa dòng PR ở đầu hồ sơ. Nội dung khác giữ nguyên.
