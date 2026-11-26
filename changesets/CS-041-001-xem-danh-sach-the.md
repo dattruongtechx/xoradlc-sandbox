@@ -10,7 +10,7 @@ inputs:
     version: v1 / nội dung v0.1 (nháp, Tech lead chưa rà; còn 🔴 G-091 SEC-D03, G-092 SEC-A02)
   - path: API-cards-list
     version: v0.1 (AI soạn nháp, cần người rà)
-commits: []
+commits: [abba7f4]
 approved_by: null
 approved_at: null
 ---
@@ -26,7 +26,7 @@ Thiết kế và contract đang là bản nháp chưa rà. Kết quả có thể
 | Work order | WO-2026-041 – Xem danh sách thẻ |
 | Bước | Thực hiện |
 | Nhánh | `feature/WO-2026-041-xem-danh-sach-the`, tạo từ `origin/main` `c632205` |
-| Commit | Chưa commit |
+| Commit | `abba7f4` (code), `8a1432b` (hồ sơ) |
 | PR | Chưa tạo |
 | Map WO (`xdlc link`) | Đã map nhánh → WO-2026-041 · Thực hiện |
 | Hướng làm | Hướng B: code ngay theo thiết kế nháp, điểm chưa chốt ghi `[GIẢ ĐỊNH]` (Developer chọn) |
