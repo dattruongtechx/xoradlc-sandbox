@@ -26,3 +26,8 @@ IDEMPOTENCY_KEY_REUSED = "IDEMPOTENCY_KEY_REUSED"  # 409
 RATE_LIMITED = "RATE_LIMITED"  # 429
 STEP_UP_REQUIRED = "STEP_UP_REQUIRED"  # 401
 STEP_UP_INVALID = "STEP_UP_INVALID"  # 401
+
+# WO-2026-041 — xem danh sách thẻ. Giá trị theo bảng lỗi OUT-041-02 mục 4 / API-cards-list.md mục 5;
+# không theo dạng <MIỀN>_<LÝ_DO>, giữ đúng thiết kế như WO-2026-043.
+UNAUTHENTICATED = "UNAUTHENTICATED"  # 401
+FORBIDDEN = "FORBIDDEN"  # 403, thiếu scope cards:read

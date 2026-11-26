@@ -142,6 +142,7 @@ class RequestContext:
     request_id: str
     device_id: str = ""
     ip: str = ""
+    scopes: frozenset = frozenset()  # WO-2026-041: scope trong token, vd "cards:read"
 
 
 class CardLockService:
